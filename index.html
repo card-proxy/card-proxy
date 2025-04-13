@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>カード画像配置ツール</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>カード画像配置ツール</h1>
+
+  <div class="controls">
+    <label for="sizeSelector">カードサイズ：</label>
+    <select id="sizeSelector">
+      <option value="63x88">スタンダード (63mm x 88mm)</option>
+      <option value="59x86">小型 (59mm x 86mm)</option>
+      <option value="custom">カスタム</option>
+    </select>
+    <input type="number" id="customWidth" placeholder="幅(mm)" style="display:none;" />
+    <input type="number" id="customHeight" placeholder="高さ(mm)" style="display:none;" />
+
+    <label for="pageCountSelector">ページ数：</label>
+    <select id="pageCountSelector"></select>
+
+    <label><input type="checkbox" id="applyToAll" /> 同じ画像を全枠に適用</label>
+
+    <button onclick="resetImages()">リセット</button>
+    <button onclick="downloadPDF()">PDF出力</button>
+  </div>
+
+  <div id="cardGrid" class="card-grid"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
