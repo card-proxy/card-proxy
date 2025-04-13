@@ -8,8 +8,6 @@ function createCardSlots() {
   for (let i = 0; i < 9; i++) {
     const slot = document.createElement("div");
     slot.className = "card-slot";
-    slot.style.width = currentSize.width + "mm";
-    slot.style.height = currentSize.height + "mm";
 
     const img = document.createElement("img");
     if (selectedImages[i]) {
@@ -132,11 +130,9 @@ document.getElementById("sizeSelector").addEventListener("change", function () {
     customH.style.display = "inline-block";
     customW.addEventListener("input", () => {
       currentSize.width = parseFloat(customW.value) || 0;
-      createCardSlots();
     });
     customH.addEventListener("input", () => {
       currentSize.height = parseFloat(customH.value) || 0;
-      createCardSlots();
     });
   }
   createCardSlots();

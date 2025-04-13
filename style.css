@@ -17,9 +17,10 @@ h1 {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-content: center;
+  max-width: 100%;
 }
 
 .card-slot {
@@ -30,6 +31,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 63 / 88;
+  width: 100%;
 }
 
 .card-slot img {
